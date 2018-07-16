@@ -7,9 +7,12 @@
 
 <script>
 import HelloWorld from './components/HelloWorld'
-
 export default {
   name: 'App',
+  created() {
+    console.log(this.$store.state.count)
+    this.$store.commit('increment')
+  },
   components: {
     HelloWorld
   }
