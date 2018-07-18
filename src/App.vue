@@ -1,20 +1,21 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <HelloWorld/>
+    <EditForm/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import EditForm from '@/components/EditForm.vue'
 export default {
-  name: 'App',
-  created() {
-    console.log(this.$store.state.count)
-    this.$store.commit('increment')
-  },
+  name: 'app',
   components: {
-    HelloWorld
+    EditForm
+  },
+  computed: {
+    message() {
+      return this.$store.getters.message
+    }
   }
 }
 </script>
